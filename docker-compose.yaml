@@ -1,6 +1,7 @@
 services:
   app-frontend:
     container_name: yolo-client
+    image: condabu/yolo-client:1.0.0
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -14,6 +15,7 @@ services:
 
   app-backend:
     container_name: yolo-backend
+    image: condabu/yolo-backend:1.0.0
     build:
       context: ./backend
       dockerfile: Dockerfile

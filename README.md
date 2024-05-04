@@ -48,6 +48,8 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
     ```shell
     curl -O https://raw.githubusercontent.com/charlesmagutu/yolo/master/docker-compose.yaml
     ```
+    This command will download the file and save it in your current directory with the same name as the original file.
+
 2. Navigate to the directory containing the `docker-compose.yml` file:
     ```shell
     cd path/to/your/docker-compose.yaml
@@ -56,7 +58,10 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
     ```shell
     docker-compose pull
     ```
+    This command will download the Docker images for all the services specified in the Docker Compose file. 
+
 4. Start all services defined in the Docker Compose file in detached mode:
     ```shell
     docker-compose up -d
     ```
+    This command will start all the services defined in the Docker Compose file in detached mode (-d), allowing them to run in the background.

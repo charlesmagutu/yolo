@@ -48,6 +48,13 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
     ```shell
     curl -O https://raw.githubusercontent.com/charlesmagutu/yolo/master/docker-compose.yaml
     ```
+    or 
+
+    ```shell
+    
+    wget https://raw.githubusercontent.com/charlesmagutu/yolo/master/docker-compose.yaml
+    
+    ```
     This command will download the file and save it in your current directory with the same name as the original file.
 
 2. Navigate to the directory containing the `docker-compose.yml` file:

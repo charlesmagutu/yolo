@@ -44,15 +44,19 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
 - [Docker](https://docs.docker.com/get-docker/) installed on your system
 
 ## Running the Application
-1. Navigate to the directory containing the `docker-compose.yml` file:
+1. download docker compose file from github
     ```shell
-    cd path/to/your/project
+    curl -O https://raw.githubusercontent.com/charlesmagutu/yolo/master/docker-compose.yaml
     ```
-2. Pull the Docker images for all services specified in the Docker Compose file:
+2. Navigate to the directory containing the `docker-compose.yml` file:
+    ```shell
+    cd path/to/your/docker-compose.yaml
+    ```
+3. Pull the Docker images for all services specified in the Docker Compose file:
     ```shell
     docker-compose pull
     ```
-3. Start all services defined in the Docker Compose file in detached mode:
+4. Start all services defined in the Docker Compose file in detached mode:
     ```shell
     docker-compose up -d
     ```

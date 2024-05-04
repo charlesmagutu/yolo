@@ -1,12 +1,11 @@
-FROM alpine:3.19
+FROM alpine:3.19 AS production
 
 RUN apk add --no-cache nodejs npm
-
 WORKDIR /backend
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --production
 
 COPY . .
 

@@ -75,4 +75,4 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
 
 ## Accessing the Application
 
-   - [Once the application is up and running, you can access the frontend at] (http://localhost:3000)
+   Once the application is up and running, you can access the frontend at http://localhost:3000

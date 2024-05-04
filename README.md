@@ -51,7 +51,7 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
     or 
 
     ```shell
-    
+
     wget https://raw.githubusercontent.com/charlesmagutu/yolo/master/docker-compose.yaml
     
     ```
@@ -72,3 +72,7 @@ This guide will walk you through the steps to set up and run the YOLO applicatio
     docker-compose up -d
     ```
     This command will start all the services defined in the Docker Compose file in detached mode (-d), allowing them to run in the background.
+
+## Accessing the Application
+
+    Once the application is up and running, you can access the frontend at [http://localhost:3000](http://localhost:3000)

@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  app-frontend:
+    container_name: yolo-client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - app-backend
+      - app-database
+    networks:
+      - yolo-network
+
+  app-backend:
+    container_name: yolo-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    depends_on:
+      - app-database
+    networks:
+      - yolo-network
+      
+  app-database:
+    container_name: yolo-database
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - yolo-network
+
+volumes:
+  mongo_data:
+
+networks:
+  yolo-network:
+    driver: bridge

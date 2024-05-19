@@ -1,7 +1,8 @@
----
-# tasks file for frontend
 - name: Build docker yolo frontend image
   docker_image:
     name: "{{ yolo_frontend_image }}"
-    path: "{{ yolo_frontend_dockerfile }}" 
-
+    build:
+      path: "{{ yolo_frontend_build_context }}"
+      dockerfile: "{{ yolo_frontend_dockerfile }}"
+    source: build
+    state: present

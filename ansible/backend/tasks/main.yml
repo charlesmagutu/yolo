@@ -3,4 +3,8 @@
 - name: Build yolo docker backend image
   docker_image: 
     name: "{{ yolo_backend_image }}"
-    path: "{{ yolo_backend_dockerfile }}" 
+    build:
+      path: "{{ yolo_backend_build_context }}" 
+      dockerfile: "{{ yolo_backend_dockerfile }}" 
+    source: build
+    state: present

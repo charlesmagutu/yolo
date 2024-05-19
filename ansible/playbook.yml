@@ -4,5 +4,11 @@
   become: yes
 
   roles:
-    - docker
+    - ../ansible/docker
 
+- name: Clone Project from Git
+  hosts: prod 
+  become: yes
+
+  roles:
+    - clone_app 

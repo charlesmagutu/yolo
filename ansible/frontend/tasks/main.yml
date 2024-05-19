@@ -1,4 +1,7 @@
 ---
 # tasks file for frontend
-- name: Containerize frontend application
+- name: Build docker yolo frontend image
+  docker_image:
+    name: "{{ yolo_frontend_image }}"
+    path: "{{ yolo_frontend_dockerfile }}" 
 

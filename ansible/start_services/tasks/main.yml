@@ -1,0 +1,10 @@
+---
+# tasks file for start_services
+- name: Check if Mongo Volume exists
+  command: docker volume inspect "{{ mongo_volume }}"
+  register: mongo_volume_exists
+  failed_when: false
+
+- name: Create "{{ mongo_volume }}" if it doesn't exist
+  command: docker volume create --name "{{ mongo_volume }}"
+  when: mongo_volume_exists|failed

@@ -1,2 +1,6 @@
 ---
-# tasks file for backend
+
+- name: Build yolo docker backend image
+  docker_image: 
+    name: "{{ yolo_backend_image }}"
+    path: "{{ yolo_backend_dockerfile }}" 

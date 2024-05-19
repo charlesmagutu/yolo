@@ -1,2 +1,5 @@
 ---
-# tasks file for database
+- name: pull mongo database image
+   docker_image:
+     name: mongo
+     source: pull

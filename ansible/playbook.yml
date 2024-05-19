@@ -9,11 +9,12 @@
     
     yolo_frontend_image: "yolo-client"
     yolo_frontend_dockerfile: "/app/client/Dockerfile"
-    yolo_frontend_build_context: "/app/client"
+    yolo_frontend_build_context: "/app/client/"
 
     yolo_backend_image: "yolo-backend"
     yolo_backend_dockerfile: "/app/backend/Dockerfile" 
-
+    yolo_backend_build_context: /app/backend/
+    
   roles:
     - docker 
     - clone_app 

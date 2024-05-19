@@ -1,0 +1,8 @@
+---
+- name: Provision Server
+  hosts: prod 
+  become: yes
+
+  roles:
+    - docker
+

@@ -1,6 +1,7 @@
 ---
 - name: Provision Server
-  hosts: prod 
+  hosts: prod
+  connection: ssh
   become: yes
 
   vars:

@@ -30,7 +30,7 @@
       - '5000:5000'
     networks:
       - name: yolo-network
-    environment:
+    env:
       MONGODB_URI: mongodb://yolo-database/
     state: started
 

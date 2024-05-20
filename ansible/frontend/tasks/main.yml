@@ -1,3 +1,4 @@
+---
 - name: Build docker yolo frontend image
   docker_image:
     name: "{{ yolo_frontend_image }}"

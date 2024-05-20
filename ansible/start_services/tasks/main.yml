@@ -3,11 +3,11 @@
 
 - name: Create mongo_data volume
   docker_volume:
-    name: mongo_data
+    name: "{{mongo_data}}"
 
-- name: Create yolo-network network
+- name: Create network
   docker_network:
-    name: yolo-network
+    name: "{{ network }}"
     driver: bridge
 
 - name: Start yolo-database container
@@ -19,7 +19,7 @@
     volumes:
       - 'mongo_data:/data/db'
     networks:
-      - name: yolo-network
+      - name: "{{ network }}"
     state: started
 
 - name: Start yolo-backend container
@@ -29,7 +29,7 @@
     ports:
       - '5000:5000'
     networks:
-      - name: yolo-network
+      - name: "{{ network }}"
     env:
       MONGODB_URI: mongodb://yolo-database/
     state: started
@@ -41,5 +41,5 @@
     ports:
       - '3000:3000'
     networks:
-      - name: yolo-network
+      - name: "{{ network }}"
     state: started

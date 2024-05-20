@@ -7,7 +7,8 @@
   vars:
     clone_from: "https://github.com/charlesmagutu/yolo.git"
     clone_to: "/app"
-    # mongo_volume: "mongo_data"
+    mongo_volume: "mongo_data"
+    network : "yolo-network"
     
     yolo_frontend_image: "yolo-client"
     yolo_frontend_dockerfile: "/app/client/Dockerfile"

@@ -1,0 +1,6 @@
+---
+# tasks file for clone_app
+- name: Clone application Source Code from Git
+  git:
+    repo: "{{ clone_from }}"
+    dest: "{{ clone_to }}"

@@ -1,0 +1,45 @@
+---
+# tasks file for start_services
+
+- name: Create mongo_data volume
+  docker_volume:
+    name: mongo_data
+
+- name: Create yolo-network network
+  docker_network:
+    name: yolo-network
+    driver: bridge
+
+- name: Start yolo-database container
+  docker_container:
+    name: yolo-database
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'mongo_data:/data/db'
+    networks:
+      - name: yolo-network
+    state: started
+
+- name: Start yolo-backend container
+  docker_container:
+    name: yolo-backend
+    image: yolo-backend:latest
+    ports:
+      - '5000:5000'
+    networks:
+      - name: yolo-network
+    env:
+      MONGODB_URI: mongodb://yolo-database/
+    state: started
+
+- name: Start yolo-client container
+  docker_container:
+    name: yolo-client
+    image: yolo-client:latest
+    ports:
+      - '3000:3000'
+    networks:
+      - name: yolo-network
+    state: started

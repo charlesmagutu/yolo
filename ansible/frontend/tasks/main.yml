@@ -1,0 +1,8 @@
+- name: Build docker yolo frontend image
+  docker_image:
+    name: "{{ yolo_frontend_image }}"
+    build:
+      path: "{{ yolo_frontend_build_context }}"
+      dockerfile: "{{ yolo_frontend_dockerfile }}"
+    source: build
+    state: present

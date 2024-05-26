@@ -72,9 +72,9 @@ To access the deployed application on EC2 instance check the console for the pul
 
 The application running correclty
 Home Page
-![home page](./images/home.png))
+![home page](./images/home.png)
 Products Page
-![products page](./images/products.png))
+![products page](./images/products.png)
 
 ## Notes
 

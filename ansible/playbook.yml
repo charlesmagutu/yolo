@@ -4,6 +4,7 @@
   connection: ssh
   become: yes
 
+  #variables
   vars:
     clone_from: "https://github.com/charlesmagutu/yolo.git"
     clone_to: "/app"
@@ -17,9 +18,15 @@
     yolo_backend_build_context: /app/backend/
    
   roles:
+    #installs docker and its dependecnies on target hosts
     - docker 
+    #clones the code from repo to target host
     - clone_app 
+    # pull mongo db image from docker hub
     - database
+    # build backend docker container and configures it from source code
     - backend
+    # build frontend docker container and configures it from source code
     - frontend
+    # starts the docker services frontend, backend, and databse
     - start_services

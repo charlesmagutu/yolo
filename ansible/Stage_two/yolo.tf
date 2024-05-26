@@ -53,7 +53,7 @@ resource "aws_instance" "yolo_server" {
 
   connection {
     type        = "ssh"
-    user        = "ubuntu"
+    user        = var.aws_user
     private_key = file(var.private_key_path)
     host        = self.public_ip
   }
@@ -66,7 +66,7 @@ resource "aws_instance" "yolo_server" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${self.public_ip}, ../playbook.yml --extra-vars 'target=${self.public_ip}' -u ubuntu --private-key=${var.private_key_path}"
+    command = "ansible-playbook -i ${self.public_ip}, ../playbook.yml --extra-vars 'target=${self.public_ip}' -u ${var.aws_user} --private-key=${var.private_key_path}"
   }
 
   provisioner "local-exec" {

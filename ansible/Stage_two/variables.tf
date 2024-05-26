@@ -17,3 +17,7 @@ variable "private_key_path" {
 variable "key_name" {
   default = "server_key"
 }
+
+variable "aws_user" {
+  default = "ubuntu"
+}

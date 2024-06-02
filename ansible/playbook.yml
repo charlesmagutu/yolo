@@ -2,7 +2,7 @@
 - name: Provision Server
   hosts: all
   connection: ssh
-  become: yes
+  become: true
 
   #variables
   vars:

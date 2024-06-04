@@ -14,25 +14,13 @@ spec:
       containers:
       - name: yolo-client
         image: condabu/yolo-frontend:1.0.0
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 3000
       - name: yolo-backend
         image: condabu/yolo-backend:1.0.0
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500"
         ports:
         - containerPort: 5000
       - name: yolo-database
         image: mongo:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500" 
         ports:
         - containerPort: 27017

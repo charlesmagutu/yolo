@@ -8,7 +8,7 @@ spec:
     app: yolo-app
   ports:
     - protocol: TCP
-      port: 32870
+      port: 80
       targetPort: 3000
 ---
 apiVersion: v1
